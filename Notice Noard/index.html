@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="newInputText" placeholder="Enter new item text">
+    <button id="addItem" onclick="addItem()">Add Item</button>
+    <div id="container"></div>
+    <script>
+        function addItem() {
+            var newInputText = document.getElementById("newInputText").value.trim();
+            if (newInputText !=="") {
+                var item = document.createElement("p");
+                item.className = "item";
+                item.textContent = newInputText;
+                document.getElementById("container").appendChild(item);
+                document.getElementById("newInputText").value = "";
+            }
+            else{
+                alert("Please enter a text");
+            }
+        }
+    </script>
+    
+</body>
+</html>
